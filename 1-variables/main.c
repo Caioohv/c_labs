@@ -68,7 +68,7 @@ int main() {
     floats are not always precise
     because they are stored in binary format
     for example, 0.1 + 0.2 is not exactly 0.3
-    it is 0.30000000000000004
+    it is 0.30000001192092895508
 
     this is because floats are stored in binary format
     and some decimal numbers cannot be represented exactly in binary
@@ -77,7 +77,13 @@ int main() {
     and it can cause problems in your calculations
     for example, if you compare two floats that are supposed to be equal,
     you might get false because of the precision error
-  
+  */
+
+  if (c == 0.30000001f) {
+    printf("0.1 + 0.2 should be exactly 0.3, but its not :/\n");
+  }
+
+  /*
     so, if you want to compare floats, you should use a tolerance
     for example, you can check if the difference between two floats is less than a small value
     like 0.0001
